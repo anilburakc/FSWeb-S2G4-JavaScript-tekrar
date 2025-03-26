@@ -97,7 +97,7 @@ let ucetambolunenler=[],
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
   siralisayilar,
-  tekraredensayilar;
+  tekraredensayilar = [];
 
 // 3a çözümü
 
@@ -127,16 +127,27 @@ console.log(ucebolunenlerintoplami)
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500)
+console.log(besyuzdenkucuksayilar)
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b)
+console.log(siralisayilar)
 
 // 3f çözümü
 
-/* kodlar buraya */
+const sayiSayaci = {};
+sayilar.forEach((sayi) => {
+  sayiSayaci[sayi] = (sayiSayaci[sayi] || 0) + 1;
+});
 
+for (const sayi in sayiSayaci) {
+  if(sayiSayaci[sayi] > 1){
+    tekraredensayilar.push(`${sayi} sayısı ${sayiSayaci[sayi]} kere tekrar edilmiştir`)
+  }
+}
+console.log(tekraredensayilar)
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
